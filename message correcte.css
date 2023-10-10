@@ -1,0 +1,411 @@
+/* ********************************Reset CSS********************************* */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+body {
+    max-width: 1000px;
+    min-width: 280px;
+    background-color: rgb(238, 238, 238);
+    margin-bottom: 70px;
+}
+
+#navigation {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 30px;
+    bottom: 0vh;
+    background: rgb(255, 255, 255);
+    /* Fond semi-transparent pour atténuer le flou */
+    backdrop-filter: blur(30px);
+    padding: 15px 0px 15px 0px;
+    z-index: 10000;
+    overflow: hidden;
+    border: 0.001px solid;
+}
+
+.logoNavigation {
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+}
+
+.logoNavigation:hover {
+    border-radius: 20%;
+    background-color: rgb(204, 204, 204);
+    z-index: -10;
+}
+
+/* Styles pour masquer ou afficher les sections */
+.hidden {
+    display: none;
+}
+
+.topSpace{
+    padding: 10px;
+}
+
+h2 {
+    font-size: 200%;
+    font-weight: bold;
+    padding: 10px 0 10px 0;
+}
+
+#inputSearchMessages,
+#inputSearchReglages,
+#inputSearchAppelsMissing {
+    background-color: rgb(240, 240, 240);
+    color: rgb(107, 107, 107);
+    width: 90%;
+    height: 30px;
+    font-size: 110%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.placeCenterCSS {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* **************************************************CSS Publish************************************* */
+
+.sectionPublish {
+    padding: 20px;
+}
+
+/* *************************************************CSS Appels******************************************* */
+
+.chooseTypeAppels {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    text-align: center;
+    width: 200px;
+    background-color: gray;
+    margin: 10px 0 10px 0;
+
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.typeAppels {
+    width: 100px;
+    height: 20px;
+    font-size: 110%;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.typeAppels:hover {
+    background-color: #fff;
+}
+
+.timeAppels {
+    padding: 20px;
+}
+
+.ResentAppels, .AncienAppels {
+    background-color: #fff;
+    padding: 15px;
+    margin-top: 10px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.userCalling {
+    display: flex;
+    align-items: start;
+    padding: 10px 0px 10px 10px;
+}
+
+/* ***************************************************CSS ACTUS************************************* */
+
+.CardSectionActus {
+    display: flex;
+    justify-content: stretch;
+    align-self: center;
+    overflow-x: auto;
+    /* Activer la barre de défilement horizontale */
+    gap: 10px;
+    padding: 10px;
+}
+
+.CardActus {
+    display: inline-block;
+    border: solid rgb(255, 139, 96);
+    padding: 15px;
+    border-radius: 12px;
+    background-color: rgb(10, 89, 121);
+    box-shadow: 0px 3px 5px #c5c5c5;
+}
+
+.CardTextActus {
+    font-size: 100%;
+    color: rgb(148, 148, 148);
+}
+
+.CardSectionActus2 {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.CardActus2 {
+    display: inline;
+    width: 95%;
+    border: 5px solid rgb(67, 165, 29);
+    padding: 5px;
+}
+.image-Actus-Style_1 {
+    width: 90%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 3px 5px #c5c5c5;
+}
+
+.image-Actus-Style_2 {
+    width: 200px;
+    margin-top: 10px;
+}
+
+.image-Actus-Style_3 {
+    width: 95%;
+    margin: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+/* *****************************************************CSS Message************************************* */
+
+
+#messagesSection {
+    background-color: #fff;
+}
+
+.hautMessages {
+    padding: 10px;
+    border: 1px solid rgb(199, 199, 199);
+}
+
+#discussion {
+    padding-left: 10px;
+}
+
+.user {
+    display: flex;
+    align-items: start;
+    padding: 10px 0px 10px 10px;
+}
+
+.userProfil {
+    width: 50px;
+    height: 50px;
+    padding-right: 10px;
+    border-radius: 100%;
+}
+
+#userName {
+    font-size: 130%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+}
+
+#lastMessage {
+    font-size: 100%;
+}
+
+
+.hautMessages.no,
+#discussion.no,
+#navigation.no {
+    display: none;
+}
+
+.space{
+    height: 70px;
+}
+
+#fontMessagesZone{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: -100;
+}
+
+.messagesContainer{
+    background-image: url('fontWhatsApp.jpg');
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-position: center;
+    z-index: 10000;
+}
+
+.messagesZone.yes {
+    display: block;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+.messagesZone {
+    display: none;
+}
+
+.hautmessagesZone {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+    width: 100%;
+    height: 30px;
+    top: 0vh;
+    background: rgb(255, 255, 255);
+    /* Fond semi-transparent pour atténuer le flou */
+    backdrop-filter: blur(30px);
+    padding: 15px 0px 15px 0px;
+    z-index: 10000;
+    overflow: hidden;
+    border: 0.001px solid;
+}
+
+.bastmessagesZone {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 30px;
+    bottom: 0vh;
+    background: rgb(255, 255, 255);
+    /* Fond semi-transparent pour atténuer le flou */
+    backdrop-filter: blur(30px);
+    padding: 15px 0px 15px 0px;
+    z-index: 10000;
+    overflow: hidden;
+    border: 0.001px solid;
+
+}
+
+.retourButton {
+    margin-left: 10px;
+}
+
+#inputFile {
+    width: 30px;
+    height: 30px;
+    font-size: 110%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.inputText {
+    background-color: #eeeeee;
+    width: 60%;
+    height: 30px;
+    font-size: 110%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.messageInitial {
+    padding: 15px;
+    max-width: 80%;
+    min-width: 10%;
+    float: left;
+    margin: 10px 0 10px 10px;
+    background-color: rgb(255, 255, 255);
+    font-size: 150%;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 0px;
+    font-family: monospace;
+
+}
+
+.message {
+    padding: 15px;
+    max-width: 80%;
+    min-width: 10%;
+    float: right;
+    margin: 10px 10px 10px;
+    background-color: rgb(172, 226, 85);
+    font-size: 150%;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 30px;
+    font-family: monospace;
+
+}
+
+
+/* ********************************************* CSS REGLAGE************************************* */
+
+.sectionReglage {
+    background-color: #fff;
+    padding: 12px;
+    margin: 10px 0 10px 0;
+    font-size: 130%;
+    width: 85%;
+    box-shadow: 0 5px 10px rgb(216, 216, 216);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.sousSectionReglage{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    line-height: 10px;
+}
+
+.iconOfReglage{
+    width: 30px;
+    height: 30px;
+}
+.iconOfReglageOnOff{
+    width: 20px;
+    height: 20px;
+}
+hr{
+    width: 80%;
+    margin-top: 5px;
+    margin-left: 20%;
+}
+
+/* ***********************************************Close off******************************* */
+
+.hautMessages.no,
+#discussion.no,
+#navigation.no {
+    display: none;
+}
+
+.space{
+    height: 70px;
+}
