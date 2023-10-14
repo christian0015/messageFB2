@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="message correcte.css">
     <link rel="stylesheet" href="index.css">
     <link rel="icon" href="logo.png" type="image/x-icon">
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-database.js"></script>
 </head>
 
 <body>
@@ -18,162 +20,183 @@
 
         <div id="accueil"></div>
 
-    <div id="pagedeConnexion">
+        <div id="pagedeConnexion">
 
-        <div id="blockdeNavigation1">
-            <div id="buttonRetour1">
-                <div id="bar1"></div>
-                <div id="bar2"></div>
+            <div id="blockdeNavigation1">
+                <div id="buttonRetour1">
+                    <div id="bar1"></div>
+                    <div id="bar2"></div>
+                </div>
+                <div id="closeButton1">
+                    <div id="bar1"></div>
+                    <div id="bar2"></div>
+                </div>
+                <div id="info">?</div>
             </div>
-            <div id="closeButton1">
-                <div id="bar1"></div>
-                <div id="bar2"></div>
-            </div>
-            <div id="info">?</div>
-        </div>
 
-        <div id="contain">
+            <div id="contain">
 
-            <h1>Connect-toi à Message</h1>
-            <span style="margin-top:10px; color: rgb(82, 82, 82);">Gère ton compte, consulte les notifications,
-                discutes
-                avec tes proches, la distance ne se remarque plus.</span>
+                <h1>Connect-toi à Message</h1>
+                <span style="margin-top:10px; color: rgb(82, 82, 82);">Gère ton compte, consulte les notifications,
+                    discutes
+                    avec tes proches, la distance ne se remarque plus.</span>
 
-            <div style="display: flex; justify-content: center;">
+                <div style="display: flex; justify-content: center;">
 
-                <label for="email" id="mail_page">
-                    <form id="login-form">
-                        <div id="spaceLogo"><img src="inconnu.jpg" alt="logo-connection-"
+                    <label for="email" id="mail_page">
+
+                        <form id="user-form">
+
+                            <input type="text" id="prenom" required placeholder="  entrez votre prenom"
+                                class="inputForInscription"><br>
+
+                            <input type="text" id="nom" required placeholder="  entrez votre nom"
+                                class="inputForInscription"><br>
+
+                            <input type="text" id="username" required placeholder="  entrez votre nom d'utilisateur"
+                                class="inputForInscription" minlength="3"><br>
+
+                                <input type="email" id="email" required placeholder="  entrez votre mail"
+                                class="inputForInscription"><br>
+
+                                <input type="tel" id="number" required placeholder="  entrez votre numero portable"
+                                class="inputForInscription" value="  +212 "><br>
+
+                            <input type="password" required placeholder="  entrez votre mots de passe" id="password "
+                                class="inputForInscription" minlength="8">
+
+                            <span style="display: flex;"><span style="font-size: x-large;">Photo</span><input
+                                    type="file" id="photo" class="inputForInscription" style="width: 105%"></span><br>
+
+
+                            <button type="submit" class="submitForInscription">Enregistrer</button>
+                            <button type="submit" id="submitLogin" style="display: none;">Enregistrer</button>
+                        </form>
+
+                    </label>
+
+                </div>
+
+                <div id="moreConnexion">
+                    <div class="connectionVia RESAU1" id="mail_connect">
+                        <div id="spaceLogo"><img src="inconnu.jpg" alt="logo-connection-" id="moreConnexionlogo">
+                        </div>
+                        <span class="textforMoreConnetion">Continuer avec email</span>
+                    </div>
+                    <div class="connectionVia facebook" id="RESEAU1">
+                        <div id="spaceLogo"><img src="logo-connection-facebook.png" alt="logo-connection-"
                                 id="moreConnexionlogo">
                         </div>
-                        <span class="texteConnetion">Continuer avec email</span>
-                        <input type="text" placeholder="entrez votre nom d'utilisateur ou votre mail"
-                            id="login-username">
-                        <input type="password" placeholder="entrez votre mots de pass" id="login-password">
-                        <button type="submit" id="submitLogin">connection</button>
-                    </form>
-                </label>
-
-            </div>
-
-            <div id="moreConnexion">
-                <div class="connectionVia RESAU1" id="mail_connect">
-                    <div id="spaceLogo"><img src="inconnu.jpg" alt="logo-connection-"
-                            id="moreConnexionlogo">
+                        <span class="textforMoreConnetion">Continuer avec Facebook</span>
                     </div>
-                    <span class="textforMoreConnetion">Continuer avec email</span>
-                </div>
-                <div class="connectionVia facebook" id="RESEAU1">
-                    <div id="spaceLogo"><img src="logo-connection-facebook.png" alt="logo-connection-"
-                            id="moreConnexionlogo">
-                    </div>
-                    <span class="textforMoreConnetion">Continuer avec Facebook</span>
-                </div>
-                <div class="connectionVia google" id="RESEAU2">
-                    <div id="spaceLogo"><img src="logo-connection-google.png" alt="logo-connection-"
-                            id="moreConnexionlogo">
-                    </div>
-                    <span class="textforMoreConnetion">Continuer avec Google</span>
-                </div>
-                <div class="connectionVia twiter" id="RESEAU3">
-                    <div id="spaceLogo"><img src="logo-connection-twiter.jpg" alt="logo-connection-"
-                            id="moreConnexionlogo">
-                    </div>
-                    <span class="textforMoreConnetion">Continuer avec Twiter</span>
-                </div>
-                <div class="connectionVia instagram" id="RESEAU4">
-                    <div id="spaceLogo"><img src="logo-connection-instagram.png" alt="logo-connection-"
-                            id="moreConnexionlogo">
-                    </div>
-                    <span class="textforMoreConnetion">Continuer avec Instagram</span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="blockDown1">
-        <span style="padding: 15px;">Tu n'as pas de compte?</span>
-        <div class="inscrition" style="padding: 15px;" id="pass_inscription">Inscrition</div>
-    </div>
-
-    <!-- ***********************************************************************Page d'inscription**************** -->
-
-    <div id="pagedeInscription">
-        <div id="blockdeNavigation1">
-            <div id="buttonRetour2">
-                <div id="bar1"></div>
-                <div id="bar2"></div>
-            </div>
-
-            <div id="closeButton2">
-                <div id="bar1"></div>
-                <div id="bar2"></div>
-            </div>
-            <div id="info">?</div>
-        </div>
-
-        <div id="contain">
-
-            <h1>Inscript-toi à Message</h1>
-            <span style="margin-top:10px; color: rgb(82, 82, 82);">Gère ton compte, consulte les notifications,
-                discutes
-                avec tes proches, la distance ne se remarque plus.</span>
-
-            <div style="display: flex; justify-content: center;">
-
-                <label for="email" id="mail_page2">
-                    <form id="signup-form">
-                        <div id="spaceLogo"><img src="logo-connection-profil.png" alt="logo-connection-"
+                    <div class="connectionVia google" id="RESEAU2">
+                        <div id="spaceLogo"><img src="logo-connection-google.png" alt="logo-connection-"
                                 id="moreConnexionlogo">
                         </div>
-                        <span class="texteConnetion">Continuer avec le nom d'utilisateur</span>
-                        <input type="text" placeholder="entrez votre nom d'utilisateur ou votre mail" id="username">
-                        <input type="password" placeholder="entrez votre mots de pass" id="password">
-                        <button type="submit"  id="submitSign">connection</button>
-                    </form>
-
-                </label>
-
-            </div>
-
-            <div id="moreConnexion2">
-                <div class="connectionVia RESAU1" id="mail_connect2">
-                    <div id="spaceLogo"><img src="inconnu.jpg" alt="logo-connection-"
-                            id="moreConnexionlogo">
+                        <span class="textforMoreConnetion">Continuer avec Google</span>
                     </div>
-                    <span class="textforMoreConnetion">Continuer avec email</span>
-                </div>
-                <div class="connectionVia facebook" id="RESEAU1">
-                    <div id="spaceLogo"><img src="inconnu.jpg" alt="logo-connection-"
-                            id="moreConnexionlogo">
+                    <div class="connectionVia twiter" id="RESEAU3">
+                        <div id="spaceLogo"><img src="logo-connection-twiter.jpg" alt="logo-connection-"
+                                id="moreConnexionlogo">
+                        </div>
+                        <span class="textforMoreConnetion">Continuer avec Twiter</span>
                     </div>
-                    <span class="textforMoreConnetion">Continuer avec Facebook</span>
-                </div>
-                <div class="connectionVia google" id="RESEAU2">
-                    <div id="spaceLogo"><img src="logo-connection-google.png" alt="logo-connection-"
-                            id="moreConnexionlogo">
+                    <div class="connectionVia instagram" id="RESEAU4">
+                        <div id="spaceLogo"><img src="logo-connection-instagram.png" alt="logo-connection-"
+                                id="moreConnexionlogo">
+                        </div>
+                        <span class="textforMoreConnetion">Continuer avec Instagram</span>
                     </div>
-                    <span class="textforMoreConnetion">Continuer avec Google</span>
-                </div>
-                <div class="connectionVia twiter" id="RESEAU3">
-                    <div id="spaceLogo"><img src="logo-connection-twiter.jpg" alt="logo-connection-"
-                            id="moreConnexionlogo">
-                    </div>
-                    <span class="textforMoreConnetion">Continuer avec Twiter</span>
-                </div>
-                <div class="connectionVia instagram" id="RESEAU4">
-                    <div id="spaceLogo"><img src="logo-connection-instagram.png" alt="logo-connection-"
-                            id="moreConnexionlogo">
-                    </div>
-                    <span class="textforMoreConnetion">Continuer avec Instagram</span>
                 </div>
             </div>
         </div>
-    </div>
-    <div id="blockDown2">
-        <span style="padding: 15px;">Tu as un compte?</span>
-        <div class="inscrition" style="padding: 15px;" id="pass_connexion">Connexion</div>
-    </div>
-        
+        <div id="blockDown1">
+            <span style="padding: 15px;">Tu n'as pas de compte?</span>
+            <div class="inscrition" style="padding: 15px;" id="pass_inscription">Inscrition</div>
+        </div>
+
+        <!-- ***********************************************************************Page d'inscription**************** -->
+
+        <div id="pagedeInscription">
+            <div id="blockdeNavigation1">
+                <div id="buttonRetour2">
+                    <div id="bar1"></div>
+                    <div id="bar2"></div>
+                </div>
+
+                <div id="closeButton2">
+                    <div id="bar1"></div>
+                    <div id="bar2"></div>
+                </div>
+                <div id="info">?</div>
+            </div>
+
+            <div id="contain">
+
+                <h1>Inscript-toi à Message</h1>
+                <span style="margin-top:10px; color: rgb(82, 82, 82);">Gère ton compte, consulte les notifications,
+                    discutes
+                    avec tes proches, la distance ne se remarque plus.</span>
+
+                <div style="display: flex; justify-content: center;">
+
+                    <label for="email" id="mail_page2">
+                        <form id="signup-form">
+                            <div id="spaceLogo"><img src="logo-connection-profil.png" alt="logo-connection-"
+                                    id="moreConnexionlogo">
+                            </div>
+                            <span class="texteConnetion">Continuer avec le nom d'utilisateur</span>
+
+                            <div style="display: block ;">
+                                <input type="text" placeholder="entrez votre nom d'utilisateur ou votre mail"
+                                    id="username">
+                                <input type="password" placeholder="entrez votre mots de pass" id="password">
+                                <button type="submit" id="submitSign">connection</button>
+
+                            </div>
+                        </form>
+
+                    </label>
+
+                </div>
+
+                <div id="moreConnexion2">
+                    <div class="connectionVia RESAU1" id="mail_connect2">
+                        <div id="spaceLogo"><img src="inconnu.jpg" alt="logo-connection-" id="moreConnexionlogo">
+                        </div>
+                        <span class="textforMoreConnetion">Continuer avec email</span>
+                    </div>
+                    <div class="connectionVia facebook" id="RESEAU1">
+                        <div id="spaceLogo"><img src="logo-connection-facebook.png" alt="logo-connection-" id="moreConnexionlogo">
+                        </div>
+                        <span class="textforMoreConnetion">Continuer avec Facebook</span>
+                    </div>
+                    <div class="connectionVia google" id="RESEAU2">
+                        <div id="spaceLogo"><img src="logo-connection-google.png" alt="logo-connection-"
+                                id="moreConnexionlogo">
+                        </div>
+                        <span class="textforMoreConnetion">Continuer avec Google</span>
+                    </div>
+                    <div class="connectionVia twiter" id="RESEAU3">
+                        <div id="spaceLogo"><img src="logo-connection-twiter.jpg" alt="logo-connection-"
+                                id="moreConnexionlogo">
+                        </div>
+                        <span class="textforMoreConnetion">Continuer avec Twiter</span>
+                    </div>
+                    <div class="connectionVia instagram" id="RESEAU4">
+                        <div id="spaceLogo"><img src="logo-connection-instagram.png" alt="logo-connection-"
+                                id="moreConnexionlogo">
+                        </div>
+                        <span class="textforMoreConnetion">Continuer avec Instagram</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="blockDown2">
+            <span style="padding: 15px;">Tu as un compte?</span>
+            <div class="inscrition" style="padding: 15px;" id="pass_connexion">Connexion</div>
+        </div>
+
 
     </header>
     <main>
@@ -336,7 +359,6 @@
                 </div>
             </div>
             <div id="discussion">
-
 
                 <div class="user">
                     <img src="inconnu.jpg" alt="" class="userProfil">
@@ -522,13 +544,17 @@
 
                 <div class="placeCenterCSS">
                     <div class="sectionReglage 1">
-                        <div class="" style="display: flex; align-items: start; padding: 10px 0px 10px 10px;">
-                            <img src="inconnu.jpg" alt="" class="userProfil">
-                            <div class="data">
-                                <span id="username-placeholder">Christian Tukunda</span>
-                                <div class="Editer" style="color: chocolate;">Modifier</div>
+
+                        <!-- ***************************** User Afficher********************************* -->
+                        <div class="" style="display: block; align-items: end; padding: 10px 0px 10px 10px;">
+
+                            <div class="user" style="display: flex; align-items: center;">
+                                <img src="" class="user-photo" alt="" width="100">
+                                <span style="font-size: 120%;" class="user-username"></span>
                             </div>
+                            <div class="Editer" style="color: chocolate;">Modifier</div>
                         </div>
+
                     </div>
 
                     <div class="sectionReglage">
@@ -611,14 +637,17 @@
 
                     <div class="sectionReglage">
                         <div class="sousSectionReglage">
-                            <img src="inconnu.jpg" alt="" class="userProfil">
-                            <div style="line-height: 20px; font-size: 70%; color: rgb(75, 75, 75);">Saissisez votre nom
+
+                            <!-- ***************************** User Afficher********************************* -->
+                            <img class="user-photo" src="" alt="">
+                            <div style="line-height: 20px; font-size: 70%; color: rgb(75, 75, 75);">Saissisez votre
+                                nom
                                 et ajoutez une photo
                                 de
                                 profile optionnelle</div>
                         </div>
                         <span style="font-size: 70%; color: chocolate;">nouveau profile</span><input type="file" name=""
-                            id="" placeholder="nouveau profile">
+                            id="" placeholder="nouveau profile" style="font-size: 60%;" >
                         <hr style="margin-left: 20px; margin-top: 7.5px;">
                         <span style="font-size: 60%; border: solid 0.3px; padding: 3px;">@</span>
                         <input type="text" name="" id="" placeholder="   New UserName"
@@ -646,6 +675,7 @@
                             style="font-size: 110%; font-family:monospace; width: 300px; padding: 10px; color:white; background-color: rgb(1, 1, 179); border-radius: 5px;">
                     </div>
 
+
                 </div>
 
             </div>
@@ -662,18 +692,22 @@
 
                     <div class="sectionReglage">
                         <div class="sousSectionReglage">
-                            <img src="inconnu.jpg" alt="" class="userProfil">
-                            <div style="line-height: 20px; font-size: 70%; color: rgb(43, 43, 43);">Christian0001</div>
+
+                            <!-- ***************************** User Afficher********************************* -->
+                            <img class="user-photo" alt="">
+                            <div style="line-height: 20px; font-size: 100%; color: rgb(43, 43, 43);"
+                                class="user-username">
+                            </div>
                         </div>
 
                         <hr style="margin-left: 20px; margin-top: 7.5px;">
-                        <span style="font-size: 60%; border: solid 0.3px; padding: 3px;">@</span>
-                        <span style="font-size: 60%;">Christian</span>
-                        <span style="font-size: 60%;">Tukunda</span>
+                        <span style="font-size: 50%; border: solid 0.3px; padding: 3px;">@</span>
+                        <span style="font-size: 75%;" class="user-prenom"></span>
+                        <span style="font-size: 75%;" class="user-nom"> </span>
                         <br>
                         <div style="display: flex;">
-                            <span style="font-size: 60%; border: solid 0.3px; padding: 3px;">M</span>
-                            <span style="font-size: 60%;">christiantukundastocklin@gmail.com</span>
+                            <span style="font-size: 50%; border: solid 0.3px; padding: 3px;">M</span>
+                            <span style="font-size: 75%; padding-left: 6px;" class="user-email"> </span>
                         </div>
 
                         <hr style="margin-left: 20px; margin-top: 7.5px; margin-bottom: 10px;">
@@ -681,7 +715,7 @@
                     </div>
                     <span style="font-size: 70%; color: chocolate;">NUMERO DE TELEPHONE</span>
                     <div class="sectionReglage">
-                        <span style="font-size: 75%;">+33 111-222222</span>
+                        <span style="font-size: 75%; padding-left: 6px;" class="user-number"></span>
                         <hr style="margin-left: 20px; margin-top: 7.5px;">
                     </div>
                     <span style="font-size: 70%; color: chocolate;">BIO</span>
@@ -689,7 +723,7 @@
                         <span style="font-size: 75%;">Vous n'avez aucune bio</span>
                         <hr style="margin-left: 20px; margin-top: 7.5px;">
                     </div>
-                    <a href="#messagesSection">Link</a>
+
                 </div>
 
             </div>
@@ -709,6 +743,105 @@
         </div>
     </footer>
 
+    <script>
+        //************************************* Script de connexion et Inscription *************************
+
+        //********************** Cacher la fase connexion et Acceder a l'application proprement dite *****************
+        const openApp1 = document.getElementById('submitLogin');
+        const openApp2 = document.getElementById('submitSign');
+        const header = document.querySelector('header');
+        const main = document.querySelector('main');
+        const navBarreBeforeOpenApp = document.getElementById('navigation');
+
+        main.style.display = 'none';
+        navBarreBeforeOpenApp.style.display = 'none';
+
+        function openApplication() {
+            header.style.display = 'none';
+            main.style.display = 'block';
+            navBarreBeforeOpenApp.style.display = 'flex';
+        }
+
+        openApp1.addEventListener('click', openApplication);
+        openApp2.addEventListener('click', openApplication);
+
+
+
+
+        // Configuration de Firebase
+        var firebaseConfig = {
+            apiKey: "AIzaSyDDiht0fWMl4u19EGnLoABGM-5_tFIRXS0",
+            authDomain: "message-3dcb8.firebaseapp.com",
+            projectId: "message-3dcb8",
+            storageBucket: "message-3dcb8.appspot.com",
+            messagingSenderId: "310402254915",
+            appId: "1:310402254915:web:11d6a1c1c9cddc92d76cf6",
+            measurementId: "G-16Y3BMBVQC"
+        };
+
+        // Initialisation de Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        // Référence à la base de données Firebase
+        var database = firebase.database();
+
+        // Écouter le formulaire soumis
+        document.getElementById('user-form').addEventListener('submit', function (e) {
+            e.preventDefault(), openApplication();
+
+            // Récupérer les valeurs des champs du formulaire
+            var nom = document.getElementById('nom').value;
+            var prenom = document.getElementById('prenom').value;
+            var username = document.getElementById('username').value;
+            var email = document.getElementById('email').value;
+            var number = document.getElementById('number').value;
+            var age = document.getElementById('password').value;
+            var photo = document.getElementById('photo').files[0];
+
+            // Enregistrer les données dans Firebase
+            var userRef = database.ref('utilisateurs').push();
+            userRef.set({
+                nom: nom,
+                prenom: prenom,
+                username: username,
+                email: email,
+                number: number,
+                password: password
+            });
+
+            // Afficher les informations de l'utilisateur
+            // Afficher les informations de l'utilisateur
+            document.querySelectorAll('.user-nom').forEach(function (element) {
+                element.textContent = nom;
+            });
+            document.querySelectorAll('.user-prenom').forEach(function (element) {
+                element.textContent = prenom;
+            });
+            document.querySelectorAll('.user-username').forEach(function (element) {
+                element.textContent = username;
+            });
+            document.querySelectorAll('.user-email').forEach(function (element) {
+                element.textContent = email;
+            });
+            document.querySelectorAll('.user-number').forEach(function (element) {
+                element.textContent = number;
+            });
+            document.querySelectorAll('.user-password').forEach(function (element) {
+                element.textContent = password;
+            });
+
+            // Afficher la photo de profil (si elle a été téléchargée)
+            if (photo) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    document.querySelectorAll('.user-photo').forEach(function (element) {
+                        element.src = e.target.result;
+                    })
+                };
+                reader.readAsDataURL(photo);
+            }
+        });
+    </script>
 
 
     <script>
@@ -749,6 +882,7 @@
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
+
 
     <script>
         // Récupérez la barre de recherche et la liste des utilisateurs
@@ -801,47 +935,8 @@
         });
     </script>
 
-    <!-- ********************************************Script pour entrer et retour message******************** -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const destinateurElements = document.querySelectorAll('.user');
-            const messagesZone = document.querySelector('.messagesZone');
-            const retourButton = document.querySelector('.retourButton');
-
-            const hautMessages = document.querySelector('.hautMessages');
-            const discussion = document.querySelector('#discussion');
-            const navigation = document.getElementById('navigation');
 
 
-            function writeMessages() {
-                messagesZone.classList.add('yes');
-                hautMessages.classList.add('no');
-                discussion.classList.add('no');
-                navigation.classList.add('no');
-                destinateurElements.style.display = 'none';
-
-                // Sélectionnez et manipulez les autres sections ici
-            }
-
-            function closeMessages() {
-                messagesZone.classList.remove('yes');
-                hautMessages.classList.remove('no');
-                discussion.classList.remove('no');
-                navigation.classList.remove('no');
-                // Sélectionnez et manipulez les autres sections ici
-            }
-
-            // Attachez des gestionnaires d'événements à chaque élément .user
-            destinateurElements.forEach(function (destinateurElement) {
-                destinateurElement.addEventListener('click', writeMessages);
-            });
-
-            retourButton.addEventListener('click', closeMessages);
-        });
-
-
-
-    </script>
 
     <!-- ************************************************************Gestion de message -->
     <script>
@@ -875,7 +970,9 @@
         });
     </script>
 
+
     <script>
+        // ***************************************************Apperçu du compte ********************************************
         const sectionOfCompte = document.getElementById('sectionOfReglage');
         const sectionCompte = document.querySelector('.CompteProfile');
         const Compte = document.querySelector('.Compte');
@@ -896,6 +993,7 @@
     </script>
 
     <script>
+        // ************************************* Modification du compte  via les parametres *****************************************
         const sectionOfReglage = document.getElementById('sectionOfReglage');
         const sectionModifier = document.querySelector('.EditProfile');
         const modifier = document.querySelector('.Editer');
@@ -917,39 +1015,46 @@
 
     <script src="javaScriptMessage.js"></script>
 
+    <script>
+        // ********************************************* Cachez l'inscription & Afficher l'app proprement dite ******************************************
+
+
+    </script>
+
 
     <script>
 
+        // **************************************** Inscription ou  Connexion **************************************************
         const mailButton = document.getElementById('mail_connect');
         const mailButton2 = document.getElementById('mail_connect2');
-    
+
         const mailPage = document.getElementById('mail_page');
         const mailPage2 = document.getElementById('mail_page2');
-    
+
         const moreConnexion = document.getElementById('moreConnexion');
         const moreConnexion2 = document.getElementById('moreConnexion2');
-    
+
         const blockDown3 = document.getElementById('blockDown1');
         const blockDown4 = document.getElementById('blockDown2');
-    
+
         const closeButton1 = document.getElementById('closeButton1');
         const closeButton2 = document.getElementById('closeButton2');
-    
+
         const buttonRetour1 = document.getElementById('buttonRetour1');
         const buttonRetour2 = document.getElementById('buttonRetour2');
-    
-    
+
+
         function mailConnect() {
             mailPage.classList.add('yes'); // Remplacez 'classeAajouterOuRetirer' par la classe que vous souhaitez ajouter ou retirer
             moreConnexion.classList.add('no'); // Remplacez 'classeAajouterOuRetirer' par la classe que vous souhaitez ajouter ou retirer
             blockDown3.style.display = 'none';
             closeButton1.style.display = 'block';
             buttonRetour1.style.display = 'none';
-    
+
         }
         mailButton.addEventListener('click', mailConnect);
-    
-    
+
+
         function mailConnect2() {
             mailPage2.classList.add('yes'); // Remplacez 'classeAajouterOuRetirer' par la classe que vous souhaitez ajouter ou retirer
             moreConnexion2.classList.add('no'); // Remplacez 'classeAajouterOuRetirer' par la classe que vous souhaitez ajouter ou retirer
@@ -958,11 +1063,11 @@
             buttonRetour2.style.display = 'none';
         }
         mailButton2.addEventListener('click', mailConnect2);
-    
-    
-    
-    
-    
+
+
+
+
+
         function backButton() {
             mailPage.classList.remove('yes');// Remplacez 'classeAajouterOuRetirer' par la classe que vous souhaitez ajouter ou retirer
             moreConnexion.classList.remove('no'); // Remplacez 'classeAajouterOuRetirer' par la classe que vous souhaitez ajouter ou retirer
@@ -971,8 +1076,8 @@
             buttonRetour1.style.display = 'block';
         }
         closeButton1.addEventListener('click', backButton);
-    
-    
+
+
         function backButton2() {
             mailPage2.classList.remove('yes'); // Remplacez 'classeAajouterOuRetirer' par la classe que vous souhaitez ajouter ou retirer
             moreConnexion2.classList.remove('no'); // Remplacez 'classeAajouterOuRetirer' par la classe que vous souhaitez ajouter ou retirer
@@ -980,26 +1085,23 @@
             closeButton2.style.display = 'none';
             buttonRetour2.style.display = 'block';
         }
-    
+
         closeButton2.addEventListener('click', backButton2);
     </script>
-    
+
+
     <script>
-    
-    </script>
-    
-    <script>
-    
+
         //---------------------------------------Changement pour differnente connexion----------------------------------
         // Récupération des éléments HTML
         const buttonPagedeInscription = document.getElementById('pass_inscription');
         const buttonPagedeConnexion = document.getElementById('pass_connexion');
         const login = document.getElementById('pagedeConnexion');
         const sign = document.getElementById('pagedeInscription');
-    
+
         const blockDown1 = document.getElementById('blockDown1');
         const blockDown2 = document.getElementById('blockDown2');
-    
+
         // Fonction pour changer les moyens de connexion
         function pageInscription() {
             login.classList.add('no');
@@ -1007,7 +1109,7 @@
             blockDown1.style.display = 'none';
             blockDown2.style.display = 'flex';
         }
-    
+
         // Fonction pour revenir à la normale
         function pageConnexion() {
             login.classList.remove('no');
@@ -1018,107 +1120,50 @@
         // Ajout d'un écouteur d'événement pour le changement
         buttonPagedeInscription.addEventListener('click', pageInscription);
         buttonPagedeConnexion.addEventListener('click', pageConnexion);
-    
+
     </script>
-    
+
+    <!-- ********************************************Script pour entrer et retour message******************** -->
     <script>
-        // Gestion de la soumission du formulaire d'inscription
-        document.getElementById("signup-form").addEventListener("submit", function (e) {
-            e.preventDefault();
-            const username = document.getElementById("username").value;
-            const password = document.getElementById("password").value;
-    
-            // Créez un nouvel utilisateur avec les informations d'inscription
-            const newUser = {
-                username: username,
-                password: password
-            };
-    
-            // Enregistrez le nouvel utilisateur dans le fichier JSON (ou envoyez au serveur)
-            fetch('users.json', {
-                method: 'GET'
-            })
-            .then(response => response.json())
-            .then(data => {
-                // Assurez-vous que l'utilisateur n'existe pas déjà (vérifiez par exemple l'unicité de l'username)
-                const userExists = data.users.some(user => user.username === newUser.username);
-                if (!userExists) {
-                    // Ajoutez le nouvel utilisateur aux données JSON (ou envoyez au serveur)
-                    data.users.push(newUser);
-                    // Mettez à jour le fichier JSON (ou envoyez au serveur)
-                    fetch('users.json', {
-                        method: 'PUT',
-                        body: JSON.stringify(data),
-                        headers: {
-                            'Content-Type': 'application/json'
-                        }
-                    })
-                    .then(() => {
-                        console.log("Utilisateur inscrit avec succès.");
-                        // Redirigez l'utilisateur vers la page de connexion après l'inscription
-                        window.location.href = "connexion.html"; // Remplacez "connexion.html" par la page de connexion réelle
-                    })
-                    .catch(error => {
-                        console.error("Erreur lors de l'inscription : " + error);
-                    });
-                } else {
-                    console.error("Cet utilisateur existe déjà.");
-                }
-            })
-            .catch(error => {
-                console.error("Erreur lors de la vérification de l'existence de l'utilisateur : " + error);
+        document.addEventListener('DOMContentLoaded', function () {
+            const destinateurElements = document.querySelectorAll('.user');
+            const messagesZone = document.querySelector('.messagesZone');
+            const retourButton = document.querySelector('.retourButton');
+
+            const hautMessages = document.querySelector('.hautMessages');
+            const discussion = document.querySelector('#discussion');
+            const navigation = document.getElementById('navigation');
+
+
+            function writeMessages() {
+                messagesZone.classList.add('yes');
+                hautMessages.classList.add('no');
+                discussion.classList.add('no');
+                navigation.classList.add('no');
+                destinateurElements.style.display = 'none';
+                navigation.style.display = 'none';
+
+                // Sélectionnez et manipulez les autres sections ici
+            }
+
+            function closeMessages() {
+                messagesZone.classList.remove('yes');
+                hautMessages.classList.remove('no');
+                discussion.classList.remove('no');
+                navigation.classList.remove('no');
+                // Sélectionnez et manipulez les autres sections ici
+            }
+
+            // Attachez des gestionnaires d'événements à chaque élément .user
+            destinateurElements.forEach(function (destinateurElement) {
+                destinateurElement.addEventListener('click', writeMessages);
             });
+
+            retourButton.addEventListener('click', closeMessages);
         });
-    
-        // Gestion de la soumission du formulaire de connexion
-        document.getElementById("login-form").addEventListener("submit", function (e) {
-            e.preventDefault();
-            const loginUsername = document.getElementById("login-username").value;
-            const loginPassword = document.getElementById("login-password").value;
-    
-            // Récupérez les données des utilisateurs depuis le fichier JSON (ou envoyez au serveur)
-            fetch('users.json', {
-                method: 'GET'
-            })
-            .then(response => response.json())
-            .then(data => {
-                const user = data.users.find(user => user.username === loginUsername && user.password === loginPassword);
-                if (user) {
-                    // Stockage temporaire du nom d'utilisateur dans localStorage
-                    localStorage.setItem("loggedInUser", user.username);
-    
-                    // Redirection vers la page de profil ou autre
-                    window.location.href = "profil.html"; // Remplacez "profil.html" par la page de profil réelle
-                } else {
-                    console.error("Identifiants invalides.");
-                }
-            })
-            .catch(error => {
-                console.error("Erreur lors de la connexion de l'utilisateur : " + error);
-            });
-        });
+
     </script>
 
-    <script>
-        const openApp1= document.getElementById('submitLogin');
-        const openApp2= document.getElementById('submitSign');
-        const header= document.querySelector('header');
-        const main= document.querySelector('main');
-        const navBarreBeforeOpenApp= document.getElementById('navigation');
-
-        main.style.display='none';
-        navBarreBeforeOpenApp.style.display='none';
-
-        function openApplication(){
-            header.style.display='none';
-            main.style.display='block';
-            navBarreBeforeOpenApp.style.display='flex';
-        }
-
-        openApp1.addEventListener('click', openApplication);
-        openApp2.addEventListener('click', openApplication);
-
-    </script>
 
 </body>
 
