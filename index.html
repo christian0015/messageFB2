@@ -22,7 +22,7 @@
 
         <div id="pagedeConnexion">
 
-            <div id="blockdeNavigation1">
+            <div class="blockdeNavigation1">
                 <div id="buttonRetour1">
                     <div id="bar1"></div>
                     <div id="bar2"></div>
@@ -34,7 +34,7 @@
                 <div id="info">?</div>
             </div>
 
-            <div id="contain">
+            <div class="contain">
 
                 <h1>Connect-toi à Message</h1>
                 <span style="margin-top:10px; color: rgb(82, 82, 82);">Gère ton compte, consulte les notifications,
@@ -45,32 +45,19 @@
 
                     <label for="email" id="mail_page">
 
-                        <form id="user-form">
+                        <form id="signup-form">
+                            <div id="spaceLogo"><img src="logo-connection-profil.png" alt="logo-connection-"
+                                    id="moreConnexionlogo">
+                            </div>
+                            <span class="texteConnetion">Continuer avec le nom d'utilisateur</span>
 
-                            <input type="text" id="prenom" required placeholder="  entrez votre prenom"
-                                class="inputForInscription"><br>
+                            <div style="display: block ;">
+                                <input type="text" placeholder="entrez votre nom d'utilisateur ou votre mail"
+                                    id="user-name">
+                                <input type="password" placeholder="entrez votre mots de pass" id="password">
+                                <button type="submit" id="submitSign">connection</button>
 
-                            <input type="text" id="nom" required placeholder="  entrez votre nom"
-                                class="inputForInscription"><br>
-
-                            <input type="text" id="username" required placeholder="  entrez votre nom d'utilisateur"
-                                class="inputForInscription" minlength="3"><br>
-
-                                <input type="email" id="email" required placeholder="  entrez votre mail"
-                                class="inputForInscription"><br>
-
-                                <input type="tel" id="number" required placeholder="  entrez votre numero portable"
-                                class="inputForInscription" value="  +212 "><br>
-
-                            <input type="password" required placeholder="  entrez votre mots de passe" id="password "
-                                class="inputForInscription" minlength="8">
-
-                            <span style="display: flex;"><span style="font-size: x-large;">Photo</span><input
-                                    type="file" id="photo" class="inputForInscription" style="width: 105%"></span><br>
-
-
-                            <button type="submit" class="submitForInscription">Enregistrer</button>
-                            <button type="submit" id="submitLogin" style="display: none;">Enregistrer</button>
+                            </div>
                         </form>
 
                     </label>
@@ -118,7 +105,7 @@
         <!-- ***********************************************************************Page d'inscription**************** -->
 
         <div id="pagedeInscription">
-            <div id="blockdeNavigation1">
+            <div class="blockdeNavigation1">
                 <div id="buttonRetour2">
                     <div id="bar1"></div>
                     <div id="bar2"></div>
@@ -131,7 +118,7 @@
                 <div id="info">?</div>
             </div>
 
-            <div id="contain">
+            <div class="contain">
 
                 <h1>Inscript-toi à Message</h1>
                 <span style="margin-top:10px; color: rgb(82, 82, 82);">Gère ton compte, consulte les notifications,
@@ -141,19 +128,33 @@
                 <div style="display: flex; justify-content: center;">
 
                     <label for="email" id="mail_page2">
-                        <form id="signup-form">
-                            <div id="spaceLogo"><img src="logo-connection-profil.png" alt="logo-connection-"
-                                    id="moreConnexionlogo">
-                            </div>
-                            <span class="texteConnetion">Continuer avec le nom d'utilisateur</span>
 
-                            <div style="display: block ;">
-                                <input type="text" placeholder="entrez votre nom d'utilisateur ou votre mail"
-                                    id="username">
-                                <input type="password" placeholder="entrez votre mots de pass" id="password">
-                                <button type="submit" id="submitSign">connection</button>
+                        <form id="user-form">
 
-                            </div>
+                            <input type="text" id="prenom" required placeholder="  entrez votre prenom"
+                                class="inputForInscription"><br>
+
+                            <input type="text" id="nom" required placeholder="  entrez votre nom"
+                                class="inputForInscription"><br>
+
+                            <input type="text" id="username" required placeholder="  entrez votre nom d'utilisateur"
+                                class="inputForInscription" minlength="3"><br>
+
+                                <input type="email" id="email" required placeholder="  entrez votre mail"
+                                class="inputForInscription"><br>
+
+                                <input type="tel" id="number" required placeholder="  entrez votre numero portable"
+                                class="inputForInscription" value="  +212 "><br>
+
+                            <input type="password" required placeholder="  entrez votre mots de passe" id="password "
+                                class="inputForInscription" minlength="8">
+
+                            <span style="display: flex;"><span style="font-size: x-large;">Photo</span><input
+                                    type="file" id="photo" class="inputForInscription" style="width: 105%"></span><br>
+
+
+                            <button type="submit" class="submitForInscription">Enregistrer</button>
+                            <button type="submit" id="submitLogin" style="display: none;">Enregistrer</button>
                         </form>
 
                     </label>

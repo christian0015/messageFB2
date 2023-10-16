@@ -24,7 +24,7 @@ html {
 }
 
 
-#blockdeNavigation1 {
+.blockdeNavigation1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -36,7 +36,6 @@ html {
     width: 30px;
     height: 30px;
     border-radius: 100%;
-    padding: 15px;
 }
 
 #closeButton1, #closeButton2{
@@ -70,12 +69,10 @@ html {
     border: 3px solid;
 }
 
-#contain {
+.contain {
     display: flex;
     flex-direction: column;
     text-align: center;
-    padding: 15px;
-    margin-top: 5%;
 }
 
 h1 {
@@ -133,11 +130,9 @@ h1 {
     display: none;
 }
 
-#pass_inscription {
+#pass_inscription, #pass_connexion {
     color: rgb(182, 18, 18);
-}
-#pass_connexion {
-    color: rgb(182, 18, 18);
+    font-weight: bold;
 }
 
 #pagedeInscription {
@@ -160,6 +155,7 @@ h1 {
     flex-direction: column;
     gap: 10px;
     width: 90%;
+    padding: 10px;
 }
 
 .inputForInscription{
@@ -195,7 +191,7 @@ input, button{
     width: 100%;
     height: 100vh;
     z-index: 10;
-    animation: logo 2s forwards;
+    animation: logo 3s forwards;
 }
 
 @keyframes logo{
