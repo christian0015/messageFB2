@@ -140,10 +140,10 @@
                             <input type="text" id="username" required placeholder="  entrez votre nom d'utilisateur"
                                 class="inputForInscription" minlength="3"><br>
 
-                                <input type="email" id="email" required placeholder="  entrez votre mail"
+                            <input type="email" id="email" required placeholder="  entrez votre mail"
                                 class="inputForInscription"><br>
 
-                                <input type="tel" id="number" required placeholder="  entrez votre numero portable"
+                            <input type="tel" id="number" required placeholder="  entrez votre numero portable"
                                 class="inputForInscription" value="  +212 "><br>
 
                             <input type="password" required placeholder="  entrez votre mots de passe" id="password "
@@ -168,7 +168,8 @@
                         <span class="textforMoreConnetion">Continuer avec email</span>
                     </div>
                     <div class="connectionVia facebook" id="RESEAU1">
-                        <div id="spaceLogo"><img src="logo-connection-facebook.png" alt="logo-connection-" id="moreConnexionlogo">
+                        <div id="spaceLogo"><img src="logo-connection-facebook.png" alt="logo-connection-"
+                                id="moreConnexionlogo">
                         </div>
                         <span class="textforMoreConnetion">Continuer avec Facebook</span>
                     </div>
@@ -648,7 +649,7 @@
                                 profile optionnelle</div>
                         </div>
                         <span style="font-size: 70%; color: chocolate;">nouveau profile</span><input type="file" name=""
-                            id="" placeholder="nouveau profile" style="font-size: 60%;" >
+                            id="" placeholder="nouveau profile" style="font-size: 60%;">
                         <hr style="margin-left: 20px; margin-top: 7.5px;">
                         <span style="font-size: 60%; border: solid 0.3px; padding: 3px;">@</span>
                         <input type="text" name="" id="" placeholder="   New UserName"
@@ -744,8 +745,20 @@
         </div>
     </footer>
 
-    <script>
+    <script type="module">
         //************************************* Script de connexion et Inscription *************************
+
+        // *********************** Script pour les fonctions FireBase *********************
+
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
 
         //********************** Cacher la fase connexion et Acceder a l'application proprement dite *****************
         const openApp1 = document.getElementById('submitLogin');
